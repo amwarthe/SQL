@@ -1,0 +1,28 @@
+-- Create a clothing store database
+
+CREATE TABLE clothing_store (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, purchase_price INTEGER, selling_price INTEGER);
+
+INSERT INTO clothing_store VALUES (1, "halter top", 100, 5, 10);
+INSERT INTO clothing_store VALUES (2, "v necks", 80, 3, 12);
+INSERT INTO clothing_store VALUES (3, "spaghetti straps", 55, 1, 7);
+INSERT INTO clothing_store VALUES (4, "tube tops", 200, 2, 9);
+INSERT INTO clothing_store VALUES (5, "shorts", 500, 10, 35);
+INSERT INTO clothing_store VALUES (6, "bermuda shorts", 250, 8, 30);
+INSERT INTO clothing_store VALUES (7, "boyfriend jeans", 300, 12, 50);
+INSERT INTO clothing_store VALUES (8, "bootcut jeans", 400, 10, 45);
+INSERT INTO clothing_store VALUES (9, "straight leg", 230, 12, 50);
+INSERT INTO clothing_store VALUES (10, "floral print dress", 100, 5, 20);
+INSERT INTO clothing_store VALUES (11, "summer dress", 65, 6, 15);
+INSERT INTO clothing_store VALUES (12, " underwear", 500, 1, 15);
+INSERT INTO clothing_store VALUES (13, "sports bra", 361, 3, 20);
+INSERT INTO clothing_store VALUES (14, " underwire bra",500, 4, 30);
+INSERT INTO clothing_store VALUES (15, "bralettes", 234, 3, 25);
+
+-- display the database ordered by price.
+SELECT * FROM clothing_store ORDER BY selling_price;
+
+-- what is the total revenue expected per item?
+SELECT (selling_price*quantity) as total FROM clothing_store;
+
+-- what is the total inventory pieces?
+SELECT SUM (quantity) FROM clothing_store;
